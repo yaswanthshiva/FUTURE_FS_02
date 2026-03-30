@@ -26,8 +26,13 @@ connectDB();
 // CORS: Allow frontend (React) to communicate with backend
 // In production, replace with your actual frontend domain
 app.use(cors({
-  origin: process.env.FRONTEND_URL || "http://localhost:3000",
+  origin: [
+    'https://future-fs-02-lilac.vercel.app',
+    'http://localhost:3000'
+  ],
   credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization']
 }));
 
 // Parse incoming JSON request bodies
