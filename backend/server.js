@@ -28,6 +28,7 @@ connectDB();
 app.use(cors({
   origin: [
     'https://future-fs-02-lilac.vercel.app',
+    'https://future-fs-02-fxt5sgv4h-yaswanth-shiva.vercel.app',
     'http://localhost:3000'
   ],
   credentials: true,
