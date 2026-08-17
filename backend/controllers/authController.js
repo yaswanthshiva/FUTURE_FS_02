@@ -82,7 +82,18 @@ const login = async (req, res) => {
   }
 };
 
+const getAdmins = async (req, res) => {
+  try {
+    const admins = await Admin.find({}, "name email");
+    return res.status(200).json(admins);
+  } catch (error) {
+    console.error("Get Admins Error:", error);
+    return res.status(500).json({ message: "Server error" });
+  }
+};
+
 module.exports = {
   register,
   login,
+  getAdmins,
 };

@@ -38,6 +38,13 @@ const leadSchema = new mongoose.Schema(
       ref: "Admin",
       default: null,
     },
+    activities: [
+      {
+        text: { type: String, required: true },
+        date: { type: Date, default: Date.now },
+        adminName: { type: String, required: true }
+      }
+    ],
   },
   {
     timestamps: true,

@@ -6,6 +6,7 @@ const {
   createLead,
   updateLead,
   deleteLead,
+  addActivity,
 } = require("../controllers/leadController");
 const authMiddleware = require("../middleware/authMiddleware");
 
@@ -17,6 +18,7 @@ router.get("/", getLeads);
 router.post("/", createLead);
 router.put("/:id", updateLead);
 router.delete("/:id", deleteLead);
+router.post("/:id/activity", addActivity);
 
 
 module.exports = router;
